@@ -1,0 +1,13 @@
+body{
+  /* background: url(/src/images/Jungle_image.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
