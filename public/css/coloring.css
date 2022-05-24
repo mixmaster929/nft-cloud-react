@@ -167,7 +167,7 @@ a.btn-border.light:hover,
 a.btn-main.btn-white,
 a.bc-btn,
 .de_tab .de_nav li span {
-    color: var(--primary-color);
+    /* color: var(--primary-color); */
 }
 
 

@@ -11,3 +11,25 @@ body{
   height: 40vmin;
   pointer-events: none;
 }
+.dropdown-item{
+  background-color: #7366f0;
+  color: #fff;
+}
+.dropdown-menu div i{
+  /* fill: var(--theme-color); */
+  width: 20px;
+  height: auto;
+  transition: fill 0.5s ease;
+  margin-right: 10px;
+  /* color: var(--theme-color); */
+}
+.address-button {
+  width: 150px;
+  /* padding-left: 5px; */
+  /* padding-top: 5px;
+  padding-bottom: 5px; */
+}
+.dropdown span {
+  font-size: 13px;
+  margin-left: -12px;
+}

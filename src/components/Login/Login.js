@@ -87,33 +87,46 @@ const Login = () => {
 
     }
     return (
-        <div className="container text-start bg-white my-5">
-            <div style={{ height: "75vh" }} className="row d-flex align-items-center">
-                <div className="col my-auto bg-white p-5">
-                    <h1 className="mb-5 text-pink">LOG IN</h1>
-                    <form onSubmit={handleManualLogin} className="border-0">
-                        <div className="mb-3">
-                            <label className="form-label fw-bold">Email address</label>
-                            <input onBlur={e => handleActions(e.target.name, e.target.value)} type="email" name='email' className="form-control rounded-0  border-0 border-bottom border-2 border-dark" />
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label fw-bold">Password</label>
-                            <input onBlur={e => handleActions(e.target.name, e.target.value)} type="password" name='password' className="form-control rounded-0  border-0 border-bottom border-2 border-dark" />
-                        </div>
+        <div className="no-bottom no-top" id="content">
+            <div id="top"></div>
+			<section className="full-height relative no-top no-bottom vertical-center" data-bgimage="url(images/background/subheader-dark.jpg) top" data-stellar-background-ratio=".5">
+                <div className="overlay-gradient t50">
+					<div className="center-y relative">
+						<div className="container">
+							<div className="row align-items-center">
+								<div className="col-lg-5 text-light wow fadeInRight" data-wow-delay=".5s">
+                                    <div className="spacer-10"></div>
+                                    <h1>Gaming NFTs Marketplace</h1>
+                                    <p className="lead">Discover, collect, and sell exclusive NFTs, straight from the world of gaming</p>
+                                </div>
+								<div className="col-lg-4 offset-lg-2 wow fadeIn" data-wow-delay=".5s">
+									<div className="box-rounded padding40" data-bgcolor="#21273e">
+										<h3 className="mb10">Admin Login</h3>
+										<form name="contactForm" id='contact_form' className="form-border" method="post" action='blank.php'>
 
-                        {success && <h6 className="text-success mb-3">{success}</h6>}
-                        {error && <h6 className="text-danger mb-3">{error}</h6>}
-                        {!isLoading && <button type="submit" className="btn bg-dark px-4 py-2 text-uppercase text-white">Log in</button>}
-                        {isLoading && <div className="spinner-border text-pink  p-3" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>}
-
-                        <div className="my-3 text-center">
-                            <Link to="/signup"><span className="text-pink text-decoration-none">Create a new account?</span></Link>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                                            <div className="field-set">
+                                                <input type='text' name='email' id='email' className="form-control" placeholder="username" />
+                                            </div>
+											
+											 <div className="field-set">
+                                                <input type='password' name='password' id='password' className="form-control" placeholder="password" />
+                                            </div>
+											
+											<div className="field-set">
+												<input type='submit' id='send_message' value='Submit' className="btn btn-main btn-fullwidth color-2" />
+											</div>
+											
+											<div className="clearfix"></div>
+											
+											<div className="spacer-single"></div>
+                                        </form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>		
         </div>
     );
 };

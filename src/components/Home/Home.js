@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import nft from '../../assets/images/misc/nft.png'
+import author from '../../assets/images/author/author-1.jpg'
+import item from '../../assets/images/items/static-1.jpg'
+import collection from '../../assets/images/collections/coll-1.jpg'
+import loadjs from 'loadjs'
 
 const Home = () => {
     const [words, setWords] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    // useEffect(() => {
-    //     axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/word/wordsLimit`).then(res => {
-    //         setIsLoading(true);
-    //         if (res) {
-    //             setWords(res.data);
-    //             setIsLoading(false);
-    //         }
-    //     })
-    // }, [words]);
+    useEffect(() => {
+        loadjs(['/js/plugins.js', '/js/designesia.js'], function() {
+            
+        });
+        // axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/word/wordsLimit`).then(res => {
+        //     setIsLoading(true);
+        //     if (res) {
+        //         setWords(res.data);
+        //         setIsLoading(false);
+        //     }
+        // })
+    }, []);
     return (
       <div>
         <div className="no-bottom no-top" id="content">
@@ -30,11 +38,11 @@ const Home = () => {
                                 <h1 className="wow fadeInUp" data-wow-delay=".75s">Gaming NFTs Marketplace</h1>
                                 <p className="wow fadeInUp lead" data-wow-delay="1s">Discover, collect, and sell exclusive NFTs, straight from the world of gaming</p>
                                 <div className="spacer-10"></div>
-                                <a href="02_dark-explore.html" className="btn-main wow fadeInUp lead" data-wow-delay="1.25s">Explore</a>
+                                <Link to="/explorer" className="btn-main wow fadeInUp lead" data-wow-delay="1.25s">Explore</Link>
                                 <div className="mb-sm-30"></div>
                             </div>
                             <div className="col-md-6 xs-hide">
-                                <img src="images/misc/nft.png" className="lazy img-fluid wow fadeIn" data-wow-delay="1.25s" alt="" />
+                                <img src={nft} className="lazy img-fluid wow fadeIn" data-wow-delay="1.25s" alt="" />
                             </div>
                         </div>
                     </div>
@@ -87,87 +95,86 @@ const Home = () => {
                             </div>
                         </div>
                         <div id="collection-carousel" className="owl-carousel wow fadeIn">
-
                                 <div className="nft_coll">
                                     <div className="nft_wrap">
-                                        <a href="02_dark-collection.html"><img src="images/collections/coll-1.jpg" className="lazy img-fluid" alt="" /></a>
+                                      <Link to="/"><img src={collection} className="lazy img-fluid" alt="" /></Link>
                                     </div>
                                     <div className="nft_coll_pp">
-                                        <a href="02_dark-collection.html"><img className="lazy pp-coll" src="images/author/author-1.jpg" alt="" /></a>
+                                      <Link to="/"><img className="lazy pp-coll" src={author} alt="" /></Link>
                                         <i className="fa fa-check"></i>
                                     </div>
                                     <div className="nft_coll_info">
-                                        <a href="02_dark-collection.html"><h4>Abstraction</h4></a>
+                                      <Link to="/"><h4>Abstraction</h4></Link>
                                         <span>ERC-192</span>
                                     </div>
                                 </div>
                             
                                 <div className="nft_coll">
                                     <div className="nft_wrap">
-                                        <a href="02_dark-collection.html"><img src="images/collections/coll-2.jpg" className="lazy img-fluid" alt="" /></a>
+                                      <Link to="/"><img src="images/collections/coll-2.jpg" className="lazy img-fluid" alt="" /></Link>
                                     </div>
                                     <div className="nft_coll_pp">
-                                        <a href="02_dark-collection.html"><img className="lazy pp-coll" src="images/author/author-2.jpg" alt="" /></a>
+                                      <Link to="/"><img className="lazy pp-coll" src={author} alt="" /></Link>
                                         <i className="fa fa-check"></i>
                                     </div>
                                     <div className="nft_coll_info">
-                                        <a href="02_dark-collection.html"><h4>Patternlicious</h4></a>
+                                      <Link to="/"><h4>Patternlicious</h4></Link>
                                         <span>ERC-61</span>
                                     </div>
                                 </div>
                             
                                 <div className="nft_coll">
                                     <div className="nft_wrap">
-                                        <a href="02_dark-collection.html"><img src="images/collections/coll-3.jpg" className="lazy img-fluid" alt="" /></a>
+                                      <Link to="/"><img src={collection} className="lazy img-fluid" alt="" /></Link>
                                     </div>
                                     <div className="nft_coll_pp">
-                                        <a href="02_dark-collection.html"><img className="lazy pp-coll" src="images/author/author-3.jpg" alt="" /></a>
+                                      <Link to="/"><img className="lazy pp-coll" src={author} alt="" /></Link>
                                         <i className="fa fa-check"></i>
                                     </div>
                                     <div className="nft_coll_info">
-                                        <a href="02_dark-collection.html"><h4>Skecthify</h4></a>
+                                      <Link to="/"><h4>Skecthify</h4></Link>
                                         <span>ERC-126</span>
                                     </div>
                                 </div>
                             
                                 <div className="nft_coll">
                                     <div className="nft_wrap">
-                                        <a href="02_dark-collection.html"><img src="images/collections/coll-4.jpg" className="lazy img-fluid" alt="" /></a>
+                                      <Link to="/"><img src={collection} className="lazy img-fluid" alt="" /></Link>
                                     </div>
                                     <div className="nft_coll_pp">
-                                        <a href="02_dark-collection.html"><img className="lazy pp-coll" src="images/author/author-4.jpg" alt="" /></a>
+                                      <Link to="/"><img className="lazy pp-coll" src={author} alt="" /></Link>
                                         <i className="fa fa-check"></i>
                                     </div>
                                     <div className="nft_coll_info">
-                                        <a href="02_dark-collection.html"><h4>Cartoonism</h4></a>
+                                      <Link to="/"><h4>Cartoonism</h4></Link>
                                         <span>ERC-73</span>
                                     </div>
                                 </div>
                             
                                 <div className="nft_coll">
                                     <div className="nft_wrap">
-                                        <a href="02_dark-collection.html"><img src="images/collections/coll-5.jpg" className="lazy img-fluid" alt="" /></a>
+                                      <Link to="/"><img src={collection} className="lazy img-fluid" alt="" /></Link>
                                     </div>
                                     <div className="nft_coll_pp">
-                                        <a href="02_dark-collection.html"><img className="lazy pp-coll" src="images/author/author-5.jpg" alt="" /></a>
+                                      <Link to="/"><img className="lazy pp-coll" src={author} alt="" /></Link>
                                         <i className="fa fa-check"></i>
                                     </div>
                                     <div className="nft_coll_info">
-                                        <a href="02_dark-collection.html"><h4>Virtuland</h4></a>
+                                      <Link to="/"><h4>Virtuland</h4></Link>
                                         <span>ERC-85</span>
                                     </div>
                                 </div>
                             
                                 <div className="nft_coll">
                                     <div className="nft_wrap">
-                                        <a href="02_dark-collection.html"><img src="images/collections/coll-6.jpg" className="lazy img-fluid" alt="" /></a>
+                                      <Link to="/"><img src={collection} className="lazy img-fluid" alt="" /></Link>
                                     </div>
                                     <div className="nft_coll_pp">
-                                        <a href="02_dark-collection.html"><img className="lazy pp-coll" src="images/author/author-6.jpg" alt="" /></a>
+                                      <Link to="/"><img className="lazy pp-coll" src={author} alt="" /></Link>
                                         <i className="fa fa-check"></i>
                                     </div>
                                     <div className="nft_coll_info">
-                                        <a href="02_dark-collection.html"><h4>Papercut</h4></a>
+                                      <Link to="/"><h4>Papercut</h4></Link>
                                         <span>ERC-42</span>
                                     </div>
                                 </div>
@@ -191,10 +198,10 @@ const Home = () => {
                                     <div className="nft__item">
                                         <div className="de_countdown" data-year="2022" data-month="6" data-day="16" data-hour="8"></div>
                                         <div className="author_list_pp">
-                                            <a href="02_dark-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Monica Lucas">                                    
-                                                <img className="lazy" src="images/author/author-1.jpg" alt="" />
+                                            <Link to={"/"} data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Monica Lucas">                                    
+                                                <img className="lazy" src={author} alt="" />
                                                 <i className="fa fa-check"></i>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="nft__item_wrap">
                                             <div className="nft__item_extra">
@@ -202,20 +209,20 @@ const Home = () => {
                                                     <button>Buy Now</button>
                                                     <div className="nft__item_share">
                                                         <h4>Share</h4>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i className="fa fa-facebook fa-lg"></i></a>
-                                                        <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i className="fa fa-twitter fa-lg"></i></a>
-                                                        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i className="fa fa-envelope fa-lg"></i></a>
+                                                        <Link to="" target="_blank"><i className="fa fa-facebook fa-lg"></i></Link>
+                                                        <Link to="" target="_blank"><i className="fa fa-twitter fa-lg"></i></Link>
+                                                        <Link to=""><i className="fa fa-envelope fa-lg"></i></Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="02_dark-item-details.html">
-                                                <img src="images/items/static-1.jpg" className="lazy nft__item_preview" alt="" />
-                                            </a>
+                                            <Link to={"/"}>
+                                              <img src={item} className="lazy nft__item_preview" alt="" />
+                                            </Link>
                                         </div>
                                         <div className="nft__item_info">
-                                            <a href="02_dark-item-details.html">
+                                            <Link to={"/"}>
                                                 <h4>Pinky Ocean</h4>
-                                            </a>
+                                            </Link>
                                             <div className="nft__item_click">
                                         <span></span>
                                     </div>
@@ -223,7 +230,7 @@ const Home = () => {
                                                 0.08 ETH<span>1/20</span>
                                             </div>
                                             <div className="nft__item_action">
-                                                <a href="#">Place a bid</a>
+                                              <Link to={"/"}>Place a bid</Link>
                                             </div>
                                             <div className="nft__item_like">
                                                 <i className="fa fa-heart"></i><span>50</span>
@@ -234,10 +241,10 @@ const Home = () => {
                                 <div className="d-item">
                                     <div className="nft__item">
                                         <div className="author_list_pp">
-                                            <a href="02_dark-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Stacy Long">                                    
-                                                <img className="lazy" src="images/author/author-10.jpg" alt="" />
+                                            <Link to={"/"} data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Stacy Long">                                    
+                                                <img className="lazy" src={author} alt="" />
                                                 <i className="fa fa-check"></i>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="nft__item_wrap">
                                             <div className="nft__item_extra">
@@ -245,20 +252,20 @@ const Home = () => {
                                                     <button>Buy Now</button>
                                                     <div className="nft__item_share">
                                                         <h4>Share</h4>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i className="fa fa-facebook fa-lg"></i></a>
-                                                        <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i className="fa fa-twitter fa-lg"></i></a>
-                                                        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i className="fa fa-envelope fa-lg"></i></a>
+                                                        <Link to={"/"}><i className="fa fa-facebook fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-twitter fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-envelope fa-lg"></i></Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="02_dark-item-details.html">
-                                                <img src="images/items/static-2.jpg" className="lazy nft__item_preview" alt="" />
-                                            </a>
+                                            <Link to={"/"}>
+                                                <img src={item} className="lazy nft__item_preview" alt="" />
+                                            </Link>
                                         </div>
                                         <div className="nft__item_info">
-                                            <a href="02_dark-item-details.html">
+                                            <Link to={"/"}>
                                                 <h4>Deep Sea Phantasy</h4>
-                                            </a>
+                                            </Link>
                                             <div className="nft__item_click">
                                         <span></span>
                                     </div>
@@ -266,7 +273,7 @@ const Home = () => {
                                                 0.06 ETH<span>1/22</span>
                                             </div>
                                             <div className="nft__item_action">
-                                                <a href="#">Place a bid</a>
+                                              <Link to={"/"}>Place a bid</Link>
                                             </div>
                                             <div className="nft__item_like">
                                                 <i className="fa fa-heart"></i><span>80</span>
@@ -278,10 +285,10 @@ const Home = () => {
                                     <div className="nft__item">
                                         <div className="de_countdown" data-year="2022" data-month="6" data-day="14" data-hour="8"></div>
                                         <div className="author_list_pp">
-                                            <a href="02_dark-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Ida Chapman">                                    
-                                                <img className="lazy" src="images/author/author-11.jpg" alt="" />
+                                            <Link to={"/"} data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Ida Chapman">                                    
+                                                <img className="lazy" src={author} alt="" />
                                                 <i className="fa fa-check"></i>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="nft__item_wrap">
                                             <div className="nft__item_extra">
@@ -289,20 +296,20 @@ const Home = () => {
                                                     <button>Buy Now</button>
                                                     <div className="nft__item_share">
                                                         <h4>Share</h4>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i className="fa fa-facebook fa-lg"></i></a>
-                                                        <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i className="fa fa-twitter fa-lg"></i></a>
-                                                        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i className="fa fa-envelope fa-lg"></i></a>
+                                                        <Link to={"/"}><i className="fa fa-facebook fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-twitter fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-envelope fa-lg"></i></Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="02_dark-item-details.html">
-                                                <img src="images/items/static-3.jpg" className="lazy nft__item_preview" alt="" />
-                                            </a>
+                                            <Link to={"/"}>
+                                                <img src={item} className="lazy nft__item_preview" alt="" />
+                                            </Link>
                                         </div>
                                         <div className="nft__item_info">
-                                            <a href="02_dark-item-details.html">
+                                            <Link to={"/"}>
                                                 <h4>Rainbow Style</h4>
-                                            </a>
+                                            </Link>
                                             <div className="nft__item_click">
                                         <span></span>
                                     </div>
@@ -310,7 +317,7 @@ const Home = () => {
                                                 0.05 ETH<span>1/11</span>
                                             </div>
                                             <div className="nft__item_action">
-                                                <a href="#">Place a bid</a>
+                                              <Link to={"/"}>Place a bid</Link>
                                             </div>
                                             <div className="nft__item_like">
                                                 <i className="fa fa-heart"></i><span>97</span>
@@ -321,10 +328,10 @@ const Home = () => {
                                 <div className="d-item">
                                     <div className="nft__item">
                                         <div className="author_list_pp">
-                                            <a href="02_dark-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Fred Ryan">                                    
-                                                <img className="lazy" src="images/author/author-12.jpg" alt="" />
+                                            <Link to={"/"} data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Fred Ryan">                                    
+                                                <img className="lazy" src={author} alt="" />
                                                 <i className="fa fa-check"></i>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="nft__item_wrap">
                                             <div className="nft__item_extra">
@@ -332,20 +339,20 @@ const Home = () => {
                                                     <button>Buy Now</button>
                                                     <div className="nft__item_share">
                                                         <h4>Share</h4>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i className="fa fa-facebook fa-lg"></i></a>
-                                                        <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i className="fa fa-twitter fa-lg"></i></a>
-                                                        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i className="fa fa-envelope fa-lg"></i></a>
+                                                        <Link to={"/"}><i className="fa fa-facebook fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-twitter fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-envelope fa-lg"></i></Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="02_dark-item-details.html">
-                                                <img src="images/items/static-4.jpg" className="lazy nft__item_preview" alt="" />
-                                            </a>
+                                            <Link to={"/"}>
+                                                <img src={item} className="lazy nft__item_preview" alt="" />
+                                            </Link>
                                         </div>
                                         <div className="nft__item_info">
-                                            <a href="02_dark-item-details.html">
+                                            <Link to={"/"}>
                                                 <h4>Two Tigers</h4>
-                                            </a>
+                                            </Link>
                                             <div className="nft__item_click">
                                         <span></span>
                                     </div>
@@ -353,7 +360,7 @@ const Home = () => {
                                                 0.02 ETH<span>1/15</span>
                                             </div>
                                             <div className="nft__item_action">
-                                                <a href="#">Place a bid</a>
+                                                <Link to={"/"}>Place a bid</Link>
                                             </div>
                                             <div className="nft__item_like">
                                                 <i className="fa fa-heart"></i><span>73</span>
@@ -364,10 +371,10 @@ const Home = () => {
                                 <div className="d-item">
                                     <div className="nft__item">
                                         <div className="author_list_pp">
-                                            <a href="02_dark-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Franklin Greer">                                    
-                                                <img className="lazy" src="images/author/author-9.jpg" alt="" />
+                                            <Link to={"/"} data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Franklin Greer">                                    
+                                                <img className="lazy" src={author} alt="" />
                                                 <i className="fa fa-check"></i>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="nft__item_wrap">
                                             <div className="nft__item_extra">
@@ -375,20 +382,20 @@ const Home = () => {
                                                     <button>Buy Now</button>
                                                     <div className="nft__item_share">
                                                         <h4>Share</h4>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i className="fa fa-facebook fa-lg"></i></a>
-                                                        <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i className="fa fa-twitter fa-lg"></i></a>
-                                                        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i className="fa fa-envelope fa-lg"></i></a>
+                                                        <Link to={"/"}><i className="fa fa-facebook fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-twitter fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-envelope fa-lg"></i></Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="02_dark-item-details.html">
-                                                <img src="images/items/anim-4.webp" className="lazy nft__item_preview" alt="" />
-                                            </a>
+                                            <Link to={"/"}>
+                                                <img src={item} className="lazy nft__item_preview" alt="" />
+                                            </Link>
                                         </div>
                                         <div className="nft__item_info">
-                                            <a href="02_dark-item-details.html">
+                                            <Link to={"/"}>
                                                 <h4>The Truth</h4>
-                                            </a>
+                                            </Link>
                                             <div className="nft__item_click">
                                         <span></span>
                                     </div>
@@ -396,7 +403,7 @@ const Home = () => {
                                                 0.06 ETH<span>1/20</span>
                                             </div>
                                             <div className="nft__item_action">
-                                                <a href="#">Place a bid</a>
+                                                <Link to={"/"}>Place a bid</Link>
                                             </div>
                                             <div className="nft__item_like">
                                                 <i className="fa fa-heart"></i><span>26</span>
@@ -408,10 +415,10 @@ const Home = () => {
                                     <div className="nft__item">
                                         <div className="de_countdown" data-year="2022" data-month="6" data-day="6" data-hour="8"></div>
                                         <div className="author_list_pp">
-                                            <a href="02_dark-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Mamie Barnett">                                    
-                                                <img className="lazy" src="images/author/author-2.jpg" alt="" />
+                                            <Link to={"/"} data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Mamie Barnett">                                    
+                                                <img className="lazy" src={author} alt="" />
                                                 <i className="fa fa-check"></i>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="nft__item_wrap">
                                             <div className="nft__item_extra">
@@ -419,20 +426,20 @@ const Home = () => {
                                                     <button>Buy Now</button>
                                                     <div className="nft__item_share">
                                                         <h4>Share</h4>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i className="fa fa-facebook fa-lg"></i></a>
-                                                        <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i className="fa fa-twitter fa-lg"></i></a>
-                                                        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i className="fa fa-envelope fa-lg"></i></a>
+                                                        <Link to={"/"}><i className="fa fa-facebook fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-twitter fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-envelope fa-lg"></i></Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="02_dark-item-details.html">
-                                                <img src="images/items/anim-2.webp" className="lazy nft__item_preview" alt="" />
-                                            </a>
+                                            <Link to={"/"}>
+                                                <img src={item} className="lazy nft__item_preview" alt="" />
+                                            </Link>
                                         </div>
                                         <div className="nft__item_info">
-                                            <a href="02_dark-item-details.html">
+                                            <Link to={"/"}>
                                                 <h4>Running Puppets</h4>
-                                            </a>
+                                            </Link>
                                             <div className="nft__item_click">
                                         <span></span>
                                     </div>
@@ -440,7 +447,7 @@ const Home = () => {
                                                 0.03 ETH<span>1/24</span>
                                             </div>    
                                             <div className="nft__item_action">
-                                                <a href="#">Place a bid</a>
+                                                <Link to={"/"}>Place a bid</Link>
                                             </div>
                                             <div className="nft__item_like">
                                                 <i className="fa fa-heart"></i><span>45</span>
@@ -451,10 +458,10 @@ const Home = () => {
                                 <div className="d-item">
                                     <div className="nft__item">
                                         <div className="author_list_pp">
-                                            <a href="02_dark-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Nicholas Daniels">                                    
-                                                <img className="lazy" src="images/author/author-3.jpg" alt="" />
+                                            <Link to={"/"} data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Nicholas Daniels">                                    
+                                                <img className="lazy" src={author} alt="" />
                                                 <i className="fa fa-check"></i>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="nft__item_wrap">
                                             <div className="nft__item_extra">
@@ -462,20 +469,20 @@ const Home = () => {
                                                     <button>Buy Now</button>
                                                     <div className="nft__item_share">
                                                         <h4>Share</h4>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i className="fa fa-facebook fa-lg"></i></a>
-                                                        <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i className="fa fa-twitter fa-lg"></i></a>
-                                                        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i className="fa fa-envelope fa-lg"></i></a>
+                                                        <Link to={"/"}><i className="fa fa-facebook fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-twitter fa-lg"></i></Link>
+                                                        <Link to={"/"}><i className="fa fa-envelope fa-lg"></i></Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="02_dark-item-details.html">
-                                                <img src="images/items/anim-1.webp" className="lazy nft__item_preview" alt="" />
-                                            </a>
+                                            <Link to={"/"}>
+                                                <img src={item} className="lazy nft__item_preview" alt="" />
+                                            </Link>
                                         </div>
                                         <div className="nft__item_info">
-                                            <a href="02_dark-item-details.html">
+                                            <Link to={"/"}>
                                                 <h4>USA Wordmation</h4>
-                                            </a>
+                                            </Link>
                                             <div className="nft__item_click">
                                         <span></span>
                                     </div>
@@ -483,7 +490,7 @@ const Home = () => {
                                                 0.09 ETH<span>1/25</span>
                                             </div>
                                             <div className="nft__item_action">
-                                                <a href="#">Place a bid</a>
+                                              <Link to={"/"}>Place a bid</Link>
                                             </div>
                                             <div className="nft__item_like">
                                                 <i className="fa fa-heart"></i><span>76</span>
@@ -510,145 +517,145 @@ const Home = () => {
                             <ol className="author_list">
                                 <li>                                    
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">
-                                            <img className="lazy" src="images/author/author-1.jpg" alt="" />
+                                        <Link to={"/"}>
+                                            <img className="lazy" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>                                    
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Monica Lucas</a>
+                                        <Link to={"/"}>Monica Lucas</Link>
                                         <span>3.2 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-2.jpg" alt="" />
+                                        <Link to={"/"}>                                  
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Mamie Barnett</a>
+                                        <Link to={"/"}>Mamie Barnett</Link>
                                         <span>2.8 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-3.jpg" alt="" />
+                                        <Link to={"/"}>                               
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Nicholas Daniels</a>
+                                        <Link to={"/"}>Nicholas Daniels</Link>
                                         <span>2.5 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-4.jpg" alt="" />
+                                        <Link to={"/"}>                                  
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Lori Hart</a>
+                                        <Link to={"/"}>Lori Hart</Link>
                                         <span>2.2 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-5.jpg" alt="" />
+                                        <Link to={"/"}>                                    
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Jimmy Wright</a>
+                                        <Link to={"/"}>Jimmy Wright</Link>
                                         <span>1.9 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-6.jpg" alt="" />
+                                        <Link to={"/"}>                                
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Karla Sharp</a>
+                                      <Link to={"/"}>Karla Sharp</Link>
                                         <span>1.6 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-7.jpg" alt="" />
+                                        <Link to={"/"}>                                    
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Gayle Hicks</a>
+                                        <Link to={"/"}>Gayle Hicks</Link>
                                         <span>1.5 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-8.jpg" alt="" />
+                                        <Link to={"/"}>                                 
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Claude Banks</a>
+                                        <Link to={"/"}>Claude Banks</Link>
                                         <span>1.3 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-9.jpg" alt="" />
+                                        <Link to={"/"}>                              
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Franklin Greer</a>
+                                        <Link to={"/"}>Franklin Greer</Link>
                                         <span>0.9 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-10.jpg" alt="" />
+                                        <Link to={"/"}>                                  
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Stacy Long</a>
+                                    <Link to={"/"}>Stacy Long</Link>
                                         <span>0.8 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-11.jpg" alt="" />
+                                        <Link to={"/"}>                                  
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Ida Chapman</a>
+                                    <Link to={"/"}>Ida Chapman</Link>
                                         <span>0.6 ETH</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="author_list_pp">
-                                        <a href="02_dark-author.html">                                    
-                                            <img className="lazy pp-author" src="images/author/author-12.jpg" alt="" />
+                                        <Link to={"/"}>                                   
+                                            <img className="lazy pp-author" src={author} alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="author_list_info">
-                                        <a href="02_dark-author.html">Fred Ryan</a>
+                                        <Link to={"/"}>Fred Ryan</Link>
                                         <span>0.5 eth</span>
                                     </div>
                                 </li>
@@ -667,46 +674,46 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="col-md-2 col-sm-4 col-6 mb-sm-30 wow fadeInRight" data-wow-delay=".1s">
-                            <a href="02_dark-explore.html" className="icon-box style-2 rounded">
+                            <Link to={"/"} className="icon-box style-2 rounded">
                                 <i className="fa fa-image"></i>
                                 <span>Art</span>
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-md-2 col-sm-4 col-6 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
-                            <a href="02_dark-explore.html" className="icon-box style-2 rounded">
+                            <Link to={"/"} className="icon-box style-2 rounded">
                                 <i className="fa fa-music"></i>
                                 <span>Music</span>
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-md-2 col-sm-4 col-6 mb-sm-30 wow fadeInRight" data-wow-delay=".3s">
-                            <a href="02_dark-explore.html" className="icon-box style-2 rounded">
+                            <Link to={"/"} className="icon-box style-2 rounded">
                                 <i className="fa fa-search"></i>
                                 <span>Domain Names</span>
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-md-2 col-sm-4 col-6 mb-sm-30 wow fadeInRight" data-wow-delay=".4s">
-                            <a href="02_dark-explore.html" className="icon-box style-2 rounded">
+                            <Link to={"/"} className="icon-box style-2 rounded">
                                 <i className="fa fa-globe"></i>
                                 <span>Virtual Worlds</span>
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-md-2 col-sm-4 col-6 mb-sm-30 wow fadeInRight" data-wow-delay=".5s">
-                            <a href="02_dark-explore.html" className="icon-box style-2 rounded">
+                            <Link to={"/"} className="icon-box style-2 rounded">
                                 <i className="fa fa-vcard"></i>
                                 <span>Trading Cards</span>
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-md-2 col-sm-4 col-6 mb-sm-30 wow fadeInRight" data-wow-delay=".6s">
-                            <a href="02_dark-explore.html" className="icon-box style-2 rounded">
+                            <Link to={"/"} className="icon-box style-2 rounded">
                                 <i className="fa fa-th"></i>
                                 <span>Collectibles</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </section>     
         </div>
-        <a href="#" id="back-to-top"></a>
+        <Link to="#" id="back-to-top"></Link>
       </div>
     );
 };

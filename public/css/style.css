@@ -650,6 +650,12 @@ header .header-col.mid .social-icons {
     text-align: center;
     outline: none;
 }
+#mainmenu a:hover {
+    color: #7366F0;
+}
+#mainmenu a:active {
+    color: #7366F0;
+}
 
 #mainmenu a span {
     position: relative;
@@ -14730,7 +14736,7 @@ img.nft__item_preview{
 
 #quick_search {
     margin-left: 100px;
-    padding: 12px 11px;
+    padding: 8px 11px;
     border: none;
     border-radius: 6px;
     font-size: 15px;
